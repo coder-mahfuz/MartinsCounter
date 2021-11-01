@@ -1,13 +1,3 @@
-const weekdays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
 const counter = document.getElementById('counter');
 
 
@@ -18,8 +8,6 @@ let tempMonth = tempDate.getMonth();
 let tempDay = tempDate.getDate();
 let presentDay = tempDate.getDay();
 
-const weekday = weekdays[presentDay];
-console.log(weekday);
 
 //run the timer
 function countdownTimer() {
@@ -29,21 +17,22 @@ function countdownTimer() {
 
   if (difference <= 0) {
     tempDay++;
-  }
-
-  if (weekday === "Friday" && difference <= 0) {
-    tempDay *= 3;
-  }
-
-  if (difference > 0) {
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  } else if (presentDay === 5) {
+    var hours = 71;
     const minutes = Math.floor((difference / 1000 / 60) % 60);
     const seconds = Math.floor((difference / 1000) % 60);
 
     //Show the counter on UI
-    counter.innerHTML = `${days} : ${hours} : ${minutes} : ${seconds}`;
+    counter.innerHTML = `${hours} : ${minutes} : ${seconds}`;
+  } else {
+    var hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / 1000 / 60) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    //Show the counter on UI
+    counter.innerHTML = `${hours} : ${minutes} : ${seconds}`;
   }
+
 }
 
 countdownTimer();
