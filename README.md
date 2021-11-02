@@ -6,4 +6,4 @@ It countdowns to 12:30
 Monday to thursday, when it hits 12:30 it restarts and countdown 24 hours to next 12:30
 But on Fridays when it hits 12:30 it countdowns to monday 12:30
 
-If you find any issues or want suggest anything, please do so. It will be greatly appreciated
+If you find any issues or want to suggest anything, please do so. It will be greatly appreciated
