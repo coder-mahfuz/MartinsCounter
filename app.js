@@ -1,6 +1,3 @@
-const counter = document.getElementById('counter');
-
-
 //necessary date-time
 let tempDate = new Date();
 let tempYear = tempDate.getFullYear();
@@ -24,9 +21,8 @@ function countdownTimer() {
   const seconds = Math.floor((difference / 1000) % 60);
 
   //Show the counter on UI
-  counter.innerHTML = `${hours} : ${minutes} : ${seconds}`;
+  document.getElementById('counter').innerHTML = `${hours} : ${minutes} : ${seconds}`;
 
 }
 
-countdownTimer();
 setInterval(countdownTimer, 1000);
