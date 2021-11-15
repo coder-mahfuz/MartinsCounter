@@ -7,7 +7,7 @@ let presentDay = tempDate.getDay();
 
 //run the timer
 function countdownTimer() {
-  const futureTime = +new Date(tempYear, tempMonth, tempDay, 12, 30, 00);
+  const futureTime = +new Date(tempYear, tempMonth, tempDay, 17, 09, 00);
   const presentTime = +new Date();
   const difference = futureTime - presentTime;
 
@@ -20,8 +20,16 @@ function countdownTimer() {
   const minutes = Math.floor((difference / 1000 / 60) % 60);
   const seconds = Math.floor((difference / 1000) % 60);
 
+  //format the UI
+  function format(item) {
+    if (item < 10) {
+      return (item = `0${item}`);
+    }
+    return item;
+  }
+
   //Show the counter on UI
-  document.getElementById('counter').innerHTML = `${hours} : ${minutes} : ${seconds}`;
+  document.getElementById('counter').innerHTML = `${format(hours)} : ${format(minutes)} : ${format(seconds)}`;
 
 }
 
