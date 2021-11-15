@@ -7,7 +7,7 @@ let presentDay = tempDate.getDay();
 
 //run the timer
 function countdownTimer() {
-  const futureTime = +new Date(tempYear, tempMonth, tempDay, 17, 09, 00);
+  const futureTime = +new Date(tempYear, tempMonth, tempDay, 12, 30, 00);
   const presentTime = +new Date();
   const difference = futureTime - presentTime;
 
